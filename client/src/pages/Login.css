@@ -1,0 +1,141 @@
+body{
+    margin:0;
+    font-family:Inter,system-ui,-apple-system,sans-serif;
+    background:#eef2f7;
+}
+
+.login-container{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 50%,#3b82f6 100%);
+    position:relative;
+    overflow:hidden;
+}
+
+.login-container::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(255,255,255,.04);
+    border-radius:50%;
+    top:-150px;
+    right:-100px;
+}
+
+.login-container::after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:rgba(255,255,255,.03);
+    border-radius:50%;
+    bottom:-80px;
+    left:-60px;
+}
+
+.login-card{
+    width:420px;
+    background:white;
+    padding:44px 40px;
+    border-radius:16px;
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+    position:relative;
+    z-index:1;
+}
+
+.login-header{
+    text-align:center;
+    margin-bottom:32px;
+}
+
+.login-header h1{
+    font-size:28px;
+    font-weight:800;
+    color:#2563eb;
+    margin-bottom:8px;
+    letter-spacing:-0.5px;
+}
+
+.login-header p{
+    color:#64748b;
+    font-size:15px;
+}
+
+.input-group{
+    margin-bottom:20px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:600;
+    font-size:14px;
+    color:#334155;
+}
+
+.input-group input{
+    width:100%;
+    padding:12px 14px;
+    border:1.5px solid #e2e8f0;
+    border-radius:10px;
+    font-size:14px;
+    transition:border-color .2s,box-shadow .2s;
+    background:#f8fafc;
+}
+
+.input-group input:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 3px rgba(37,99,235,.12);
+    background:#fff;
+}
+
+.login-btn{
+    width:100%;
+    padding:13px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    transition:background .2s,transform .1s;
+    margin-top:4px;
+}
+
+.login-btn:hover{
+    background:#1d4ed8;
+}
+
+.login-btn:active{
+    transform:scale(.985);
+}
+
+.login-btn:disabled{
+    background:#93c5fd;
+    cursor:not-allowed;
+}
+
+.login-footer{
+    margin-top:24px;
+    text-align:center;
+}
+
+.login-footer p{
+    color:#64748b;
+    font-size:14px;
+}
+
+.login-footer a{
+    color:#2563eb;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.login-footer a:hover{
+    text-decoration:underline;
+}
