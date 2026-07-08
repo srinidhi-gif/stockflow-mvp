@@ -10,7 +10,26 @@ const errorMiddleware = require("./middleware/errorMiddleware");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (mobile apps, curl, etc.)
+    if (!origin) return callback(null, true);
+    // Allow any .up.railway.app domain, localhost, or the CLIENT_URL
+    const allowed = [
+      process.env.CLIENT_URL,
+      "http://localhost:5173",
+      "http://localhost:3000",
+    ].filter(Boolean);
+    if (
+      allowed.includes(origin) ||
+      origin.endsWith(".up.railway.app")
+    ) {
+      return callback(null, true);
+    }
+    return callback(null, true); // allow all for MVP
+  },
+  credentials: true,
+}));
 app.use(express.json());
 
 // Health check
